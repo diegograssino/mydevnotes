@@ -8,6 +8,7 @@ import {firestore} from "../database/firebase";
 import Badges from "../components/Badges";
 import COLORS from "../constants/colors";
 import Emoji from "../components/Emoji";
+import HrLine from "../components/HrLine";
 
 function Content({content}) {
   const [thumbsUp, setThumbsUp] = useState(content.likes);
@@ -29,9 +30,11 @@ function Content({content}) {
     <div>
       <Toaster />
       <Box
-        backgroundColor={COLORS.tertiary}
+        backgroundColor={COLORS.darkBackgroundArticleContent}
+        borderColor={COLORS.darkBorderArticleContent}
         borderRadius={10}
         borderWidth="1px"
+        color={COLORS.darkText}
         marginX={[2, 5, 25, 50]}
         marginY={4}
         paddingX={[2, 5, 25, 50]}
@@ -42,17 +45,19 @@ function Content({content}) {
         <Heading as="h3" fontWeight={700} paddingBottom="2" size="md">
           <Text>{content.title.toUpperCase()}</Text>
         </Heading>
-        <HStack paddingBottom={1} spacing="0">
-          <Text color={COLORS.secondary} fontSize="xs">
+        <HStack paddingBottom={2} spacing="0">
+          <Text color="teal.400" fontSize="xs" fontWeight="bold">
             <VscWatch />
           </Text>
-          <Text color={COLORS.secondary} fontSize="xs" paddingRight="2">
-            {new Intl.DateTimeFormat("es-AR").format(new Date(content.date.seconds * 1000))}
+          <Text color="teal.400" fontSize="xs" fontWeight="bold">
+            {new Intl.DateTimeFormat("es-AR").format(
+              new Date(content.date.seconds * 1000),
+            )}
           </Text>
-          <Text color={COLORS.quaternary} fontSize="xs" fontWeight="bold">
+          <Text color="purple.400" fontSize="xs" fontWeight="bold">
             <VscPerson />
           </Text>
-          <Text color={COLORS.quaternary} fontSize="xs" fontWeight="bold">
+          <Text color="purple.400" fontSize="xs" fontWeight="bold">
             {content.author}
           </Text>
           <Spacer />
@@ -71,17 +76,18 @@ function Content({content}) {
             {thumbsUp}
           </Button>
         </HStack>
-        <hr />
+
+        <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
         <Text fontSize="sm" marginY="2">
           {content.content}
         </Text>
-        <hr />
+        <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
         <Flex marginTop={2}>
-          <Text color={COLORS.quaternary} fontSize="sm" paddingTop="1">
+          <Text color="purple.400" fontSize="sm" paddingTop="1">
             <VscArrowLeft />
           </Text>
           <Link to="/">
-            <Text color={COLORS.quaternary} fontSize="sm">
+            <Text color="purple.400" fontSize="sm">
               Volver al home
             </Text>
           </Link>
@@ -95,7 +101,7 @@ function Content({content}) {
             size="xs"
             variant={alreadyLiked ? "solid" : "outline"}
             onClick={() => {
-              setThumbsUp(content.likes + 1);
+              setThumbsUp(article.likes + 1);
             }}
           >
             {thumbsUp}

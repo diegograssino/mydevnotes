@@ -34,7 +34,9 @@ function ArticleListContainer() {
     });
   }, [params.id]);
 
-  return <div>{articles.length === 0 ? <Loader /> : <ArticleList articles={articles} />}</div>;
+  return (
+    <div>{articles.length === 0 ? <Loader /> : <ArticleList articles={articles} />}</div>
+  );
 }
 
 export default ArticleListContainer;

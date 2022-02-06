@@ -8,6 +8,7 @@ import {firestore} from "../database/firebase";
 import Badges from "../components/Badges";
 import COLORS from "../constants/colors";
 import Emoji from "../components/Emoji";
+import HrLine from "../components/HrLine";
 
 function Article({article}) {
   const [thumbsUp, setThumbsUp] = useState(article.likes);
@@ -29,11 +30,13 @@ function Article({article}) {
     <div>
       <Toaster />
       <Box
-        backgroundColor={COLORS.tertiary}
+        backgroundColor={COLORS.darkBackgroundArticleContent}
+        borderColor={COLORS.darkBorderArticleContent}
         borderRadius={10}
         borderWidth="1px"
-        marginX={[2, 5, 25, 50]}
-        marginY={4}
+        color={COLORS.darkText}
+        marginX={[4, 8, 25, 50]}
+        marginY={6}
         paddingX={[2, 5, 25, 50]}
         paddingY={[1, 2, 5, 7]}
         shadow="dark-lg"
@@ -44,37 +47,39 @@ function Article({article}) {
             <Text>{article.title.toUpperCase()}</Text>
           </Link>
         </Heading>
-        <HStack paddingBottom={1} spacing="0">
-          <Text color={COLORS.secondary} fontSize="xs">
+        <HStack paddingBottom={2} spacing="0">
+          <Text color="teal.400" fontSize="xs" fontWeight="bold">
             <VscWatch />
           </Text>
-          <Text color={COLORS.secondary} fontSize="xs" paddingRight="2">
-            {new Intl.DateTimeFormat("es-AR").format(new Date(article.date.seconds * 1000))}
+          <Text color="teal.400" fontSize="xs" fontWeight="bold" paddingRight="2">
+            {new Intl.DateTimeFormat("es-AR").format(
+              new Date(article.date.seconds * 1000),
+            )}
           </Text>
-          <Text color={COLORS.quaternary} fontSize="xs" fontWeight="bold">
+          <Text color="purple.400" fontSize="xs" fontWeight="bold">
             <VscPerson />
           </Text>
-          <Text color={COLORS.quaternary} fontSize="xs" fontWeight="bold">
+          <Text color="purple.400" fontSize="xs" fontWeight="bold">
             {article.author}
           </Text>
         </HStack>
-        <hr />
+        <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
+
         <Text fontSize="sm" marginY="2">
           <Link to={`/article/${article.id}`}>{article.description}</Link>
         </Text>
-        <hr />
+        <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
         <Flex marginTop={2}>
           <Link to={`/article/${article.id}`}>
-            <Text color={COLORS.quaternary} fontSize="sm">
+            <Text color="purple.400" fontSize="sm">
               Leer articulo completo
             </Text>
           </Link>
-          <Text color={COLORS.quaternary} fontSize="sm" paddingTop="1">
+          <Text color="purple.400" fontSize="sm" paddingTop="1">
             <VscArrowRight />
           </Text>
           <Spacer />
           <Button
-            backgroundColor={alreadyLiked ? "" : "#f2fffc"}
             colorScheme="teal"
             fontSize="sm"
             fontWeight="bold"

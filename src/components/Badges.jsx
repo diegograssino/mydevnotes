@@ -5,7 +5,7 @@ function Badges({category}) {
   switch (category.toUpperCase()) {
     case "REACT":
       return (
-        <Badge colorScheme="blue" marginBottom="2">
+        <Badge color="cyan.400" marginBottom="2" paddingStart="0" variant="unstyled">
           <Flex>
             <Text fontSize="md">
               <DiReact />
@@ -17,7 +17,7 @@ function Badges({category}) {
 
     case "JAVASCRIPT":
       return (
-        <Badge colorScheme="yellow" marginBottom="2">
+        <Badge color="yellow.400" marginBottom="2" paddingStart="0" variant="unstyled">
           <Flex>
             <Text fontSize="md" marginRight="1">
               <DiJsBadge />
@@ -29,7 +29,7 @@ function Badges({category}) {
 
     case "GIT":
       return (
-        <Badge colorScheme="red" marginBottom="2">
+        <Badge color="red.400" marginBottom="2" paddingStart="0" variant="unstyled">
           <Flex>
             <Text fontSize="md">
               <DiGit />
@@ -40,9 +40,9 @@ function Badges({category}) {
       );
 
     default:
-      <Badge colorScheme="purple" marginBottom="2">
+      <Badge color="yellow.400" marginBottom="2" paddingStart="0" variant="unstyled">
         <DiReact />
-        React
+        Undefined
       </Badge>;
       break;
   }

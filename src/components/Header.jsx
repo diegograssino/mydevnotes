@@ -1,32 +1,45 @@
-import {Box, Flex, Heading, HStack, Spacer, Text, Link, useMediaQuery} from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  HStack,
+  Spacer,
+  Text,
+  Link,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import {Link as RouterLink} from "react-router-dom";
 import {VscMention, VscInfo} from "react-icons/vsc";
 
 import COLORS from "../constants/colors";
 
 import Emoji from "./Emoji";
-import CategoryMenu from "./CategoryMeny";
+import CategoryMenu from "./CategoryMenu";
 
 function Header() {
   const [isDesktop] = useMediaQuery("(min-width: 768px)");
 
   return (
     <Box
-      bgGradient={`linear(to-l, ${COLORS.gradientBackgroud})`}
+      backgroundColor={COLORS.darkBackground}
+      borderBottomColor={COLORS.darkBorderArticleContent}
+      borderEndColor={COLORS.darkBackground}
+      borderStartColor={COLORS.darkBackground}
+      borderTopColor={COLORS.darkBackground}
+      borderWidth="1px"
       boxShadow="dark-lg"
       position="fixed"
       w="full"
       zIndex="1100"
     >
-      <Box
-        backgroundColor={COLORS.navbar}
-        color="white"
-        paddingX={[4, 10, 20]}
-        paddingY={[2, 3, 4]}
-      >
+      <Box color="white" paddingX="3" paddingY="3">
         <Flex>
           <RouterLink to="/">
-            <Heading as="h1" paddingTop={isDesktop ? "" : "1"} size={isDesktop ? "md" : "xs"}>
+            <Heading
+              as="h1"
+              paddingTop={isDesktop ? "" : "1"}
+              size={isDesktop ? "md" : "xs"}
+            >
               <HStack spacing="0">
                 <Emoji label="emoji" symbol="💻" />
                 {/* {isMobile ? "" : <Text>MyDevNotes</Text>} */}

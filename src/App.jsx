@@ -1,4 +1,4 @@
-import {Box, ChakraProvider} from "@chakra-ui/react";
+import {Box, ChakraProvider, useMediaQuery} from "@chakra-ui/react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import "@fontsource/noto-sans/400.css";
@@ -12,12 +12,19 @@ import Contact from "./components/Contact";
 import Info from "./components/Info";
 
 function App() {
+  const [isDesktop] = useMediaQuery("(min-width: 768px)");
+
   return (
     <ChakraProvider theme={theme}>
       <BrowserRouter>
-        <Box bgGradient={`linear(to-l, ${COLORS.gradientBackgroud})`} h="100%" minHeight="100vh">
+        <Box backgroundColor={COLORS.darkBackground} h="100%" minHeight="100vh">
           <Header />
-          <Box bgGradient={`linear(to-l, ${COLORS.gradientBackgroud})`} h="100%" paddingY="55px">
+          <Box
+            // bgGradient={`linear(to-l, ${COLORS.gradientBackgroud})`}
+            backgroundColor={COLORS.darkBackground}
+            h="100%"
+            paddingY={isDesktop ? "50px" : "45px"}
+          >
             <Routes>
               <Route exact element={<ArticleListContainer />} path="/" />
               <Route exact element={<Contact />} path="/contact" />

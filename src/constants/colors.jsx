@@ -1,14 +1,14 @@
 const COLORS = {
-  primary: "#7900FF",
-  secondary: "#3FC1C9",
-  tertiary: "#F5F5F5",
+  darkBackground: "#0e1217",
+  darkBackgroundArticleContent: "#1c1f26",
+  darkBorderArticleContent: "#545b6a",
+  darkText: "#FFFFFF",
   quaternary: "#FC5185",
   navbar: "rgba(255, 255, 255, 0.3)",
   gradientBackgroud: "#7900FF, #548CFF",
 };
 
 // Los otros colores #7900FF, #548CFF, #93FFD8,#CFFFDC
-
 //   primary: '#364F6B',
 //   secondary: '#3FC1C9',
 //   tertiary: '#F5F5F5',
