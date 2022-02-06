@@ -36,7 +36,7 @@ function Content({content}) {
         marginY={4}
         paddingX={[2, 5, 25, 50]}
         paddingY={[1, 2, 5, 7]}
-        shadow="md"
+        shadow="dark-lg"
       >
         <Badges category={content.category} />
         <Heading as="h3" fontWeight={700} paddingBottom="2" size="md">

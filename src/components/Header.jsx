@@ -1,27 +1,14 @@
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  Box,
-  Flex,
-  Heading,
-  HStack,
-  Spacer,
-  Text,
-  Link,
-  Button,
-} from "@chakra-ui/react";
-import {useParams} from "react-router-dom";
+import {Box, Flex, Heading, HStack, Spacer, Text, Link, useMediaQuery} from "@chakra-ui/react";
 import {Link as RouterLink} from "react-router-dom";
-import {VscMention, VscInfo, VscChevronDown} from "react-icons/vsc";
+import {VscMention, VscInfo} from "react-icons/vsc";
 
 import COLORS from "../constants/colors";
 
 import Emoji from "./Emoji";
+import CategoryMenu from "./CategoryMeny";
 
 function Header() {
-  const {id} = useParams();
+  const [isDesktop] = useMediaQuery("(min-width: 768px)");
 
   return (
     <Box
@@ -39,47 +26,19 @@ function Header() {
       >
         <Flex>
           <RouterLink to="/">
-            <Heading as="h1" size="md">
+            <Heading as="h1" paddingTop={isDesktop ? "" : "1"} size={isDesktop ? "md" : "xs"}>
               <HStack spacing="0">
                 <Emoji label="emoji" symbol="💻" />
-                <Text>DevNotes</Text>
+                {/* {isMobile ? "" : <Text>MyDevNotes</Text>} */}
+                <Text>MyDevNotes</Text>
               </HStack>
             </Heading>
           </RouterLink>
           <Spacer />
 
           <HStack spacing="3">
-            <Menu>
-              <MenuButton
-                as={Button}
-                colorScheme="transparent"
-                rightIcon={<VscChevronDown />}
-                size="xs"
-                variant="outline"
-              >
-                {id ? id : "Categorias"}
-              </MenuButton>
-              <MenuList>
-                <MenuItem color="black" fontSize="xs">
-                  <RouterLink to="/">Todas</RouterLink>
-                </MenuItem>
-                <RouterLink to="/category/react">
-                  <MenuItem color="black" fontSize="xs">
-                    React
-                  </MenuItem>
-                </RouterLink>
-                <RouterLink to="/category/javascript">
-                  <MenuItem color="black" fontSize="xs">
-                    Javascript
-                  </MenuItem>
-                </RouterLink>
-                <RouterLink to="/category/git">
-                  <MenuItem color="black" fontSize="xs">
-                    GIT
-                  </MenuItem>
-                </RouterLink>
-              </MenuList>
-            </Menu>
+            <CategoryMenu />
+
             <Link to="/info">
               <Box>
                 <VscInfo />

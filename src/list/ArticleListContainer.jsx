@@ -17,7 +17,7 @@ function ArticleListContainer() {
           .collection("articles")
           .where("category", "==", params.id.toUpperCase())
           .orderBy("date")
-      : firestore.collection("articles").orderBy("date");
+      : firestore.collection("articles").orderBy("date", "desc");
 
     filter.get().then((results) => {
       const finalResult = [];
