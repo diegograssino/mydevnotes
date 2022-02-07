@@ -1,4 +1,4 @@
-import {Box, ChakraProvider, useMediaQuery} from "@chakra-ui/react";
+import {Box, ChakraProvider, Flex, Spacer, useMediaQuery} from "@chakra-ui/react";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import "@fontsource/noto-sans/400.css";
@@ -10,6 +10,7 @@ import ArticleListContainer from "./list/ArticleListContainer";
 import ContentContainer from "./content/ContentContainer";
 import Contact from "./components/Contact";
 import Info from "./components/Info";
+import Footer from "./components/Footer";
 
 function App() {
   const [isDesktop] = useMediaQuery("(min-width: 768px)");
@@ -17,7 +18,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <BrowserRouter>
-        <Box backgroundColor={COLORS.darkBackground} h="100%" minHeight="100vh">
+        <Box backgroundColor={COLORS.darkBackground} h="100%" minHeight="80vh">
           <Header />
           <Box
             // bgGradient={`linear(to-l, ${COLORS.gradientBackgroud})`}
@@ -32,8 +33,10 @@ function App() {
               <Route exact element={<ArticleListContainer />} path="/category/:id" />
               <Route exact element={<ContentContainer />} path="/article/:id" />
             </Routes>
+            <Spacer />
           </Box>
         </Box>
+        <Footer />
       </BrowserRouter>
     </ChakraProvider>
   );

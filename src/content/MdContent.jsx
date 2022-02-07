@@ -100,11 +100,7 @@ const MdContent = ({mdFile}) => {
     </Link>
   );
 
-  const img = ({children, ...props}) => (
-    <Center>
-      <Image {...props} />
-    </Center>
-  );
+  const img = ({children, ...props}) => <Image {...props} />;
 
   return (
     <Box paddingBottom="7">
