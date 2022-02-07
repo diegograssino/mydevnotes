@@ -40,16 +40,16 @@ function Content({content}) {
         marginX={[2, 5, 25, 50]}
         marginY={4}
         paddingX={[2, 5, 25, 50]}
-        paddingY={[1, 2, 5, 7]}
+        paddingY={[2, 5, 5, 7]}
         shadow="dark-lg"
       >
         {/* <Heading as="h3" fontWeight={700} paddingBottom="2" size="md">
           <Text>{content.title.toUpperCase()}</Text>
         </Heading> */}
+        <Box paddingTop="2">
+          <Badges category={content.category} marginTop="2" />
+        </Box>
         <HStack paddingBottom={2} spacing="0">
-          <Box paddingTop="2">
-            <Badges category={content.category} marginTop="2" />
-          </Box>
           <Text color="teal.400" fontSize="xs" fontWeight="bold">
             <VscWatch />
           </Text>

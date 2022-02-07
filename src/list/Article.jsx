@@ -38,7 +38,7 @@ function Article({article}) {
         marginX={[4, 8, 25, 50]}
         marginY={6}
         paddingX={[2, 5, 25, 50]}
-        paddingY={[1, 2, 5, 7]}
+        paddingY={[2, 5, 5, 7]}
         shadow="dark-lg"
       >
         <Badges category={article.category} />
