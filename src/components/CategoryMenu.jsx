@@ -4,6 +4,7 @@ import {Link as RouterLink} from "react-router-dom";
 import {VscChevronDown} from "react-icons/vsc";
 
 import {firestore} from "../database/firebase";
+import COLORS from "../constants/colors";
 
 const CategoryMenu = () => {
   const [categories, setCategories] = useState([]);
@@ -31,6 +32,8 @@ const CategoryMenu = () => {
     <Menu>
       <MenuButton
         as={Button}
+        borderColor={COLORS.darkBorderArticleContent}
+        color={COLORS.darkText}
         colorScheme="white"
         focusBorderColor="teal.500"
         rightIcon={<VscChevronDown />}

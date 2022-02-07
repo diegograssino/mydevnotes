@@ -42,7 +42,6 @@ function Header() {
             >
               <HStack spacing="0">
                 <Emoji label="emoji" symbol="💻" />
-                {/* {isMobile ? "" : <Text>MyDevNotes</Text>} */}
                 <Text>MyDevNotes</Text>
               </HStack>
             </Heading>
@@ -53,12 +52,12 @@ function Header() {
             <CategoryMenu />
 
             <Link to="/info">
-              <Box>
+              <Box color={COLORS.darkText}>
                 <VscInfo />
               </Box>
             </Link>
             <Link to="/contact">
-              <Box fontSize="xl">
+              <Box color={COLORS.darkText} fontSize="xl">
                 <VscMention />
               </Box>
             </Link>

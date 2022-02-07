@@ -48,10 +48,10 @@ function Article({article}) {
           </Link>
         </Heading>
         <HStack paddingBottom={2} spacing="0">
-          <Text color="teal.400" fontSize="xs" fontWeight="bold">
+          <Text color="teal" fontSize="xs" fontWeight="bold">
             <VscWatch />
           </Text>
-          <Text color="teal.400" fontSize="xs" fontWeight="bold" paddingRight="2">
+          <Text color="teal" fontSize="xs" fontWeight="bold" paddingRight="2">
             {new Intl.DateTimeFormat("es-AR").format(
               new Date(article.date.seconds * 1000),
             )}
@@ -75,7 +75,7 @@ function Article({article}) {
               Leer articulo completo
             </Text>
           </Link>
-          <Text color="purple.400" fontSize="sm" paddingTop="1">
+          <Text color="purple.400" fontSize="sm" paddingStart="1" paddingTop="1">
             <VscArrowRight />
           </Text>
           <Spacer />

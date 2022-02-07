@@ -46,10 +46,10 @@ function Content({content}) {
           <Text>{content.title.toUpperCase()}</Text>
         </Heading>
         <HStack paddingBottom={2} spacing="0">
-          <Text color="teal.400" fontSize="xs" fontWeight="bold">
+          <Text color="teal" fontSize="xs" fontWeight="bold">
             <VscWatch />
           </Text>
-          <Text color="teal.400" fontSize="xs" fontWeight="bold">
+          <Text color="teal" fontSize="xs" fontWeight="bold">
             {new Intl.DateTimeFormat("es-AR").format(
               new Date(content.date.seconds * 1000),
             )}
@@ -83,7 +83,7 @@ function Content({content}) {
         </Text>
         <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
         <Flex marginTop={2}>
-          <Text color="purple.400" fontSize="sm" paddingTop="1">
+          <Text color="purple.400" fontSize="sm" paddingEnd="1" paddingTop="1">
             <VscArrowLeft />
           </Text>
           <Link to="/">
