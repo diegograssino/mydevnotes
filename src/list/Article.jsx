@@ -47,7 +47,7 @@ function Article({article}) {
             <Text>{article.title.toUpperCase()}</Text>
           </Link>
         </Heading>
-        <HStack paddingBottom={2} spacing="0">
+        <HStack paddingBottom={5} spacing="0">
           <Text color="teal" fontSize="xs" fontWeight="bold">
             <VscWatch />
           </Text>
@@ -62,22 +62,6 @@ function Article({article}) {
           <Text color="purple.400" fontSize="xs" fontWeight="bold">
             {article.author}
           </Text>
-        </HStack>
-        <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
-
-        <Text fontSize="sm" marginY="2">
-          <Link to={`/article/${article.id}`}>{article.description}</Link>
-        </Text>
-        <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
-        <Flex marginTop={2}>
-          <Link to={`/article/${article.id}`}>
-            <Text color="purple.400" fontSize="sm">
-              Leer articulo completo
-            </Text>
-          </Link>
-          <Text color="purple.400" fontSize="sm" paddingStart="1" paddingTop="1">
-            <VscArrowRight />
-          </Text>
           <Spacer />
           <Button
             colorScheme="teal"
@@ -88,11 +72,24 @@ function Article({article}) {
             size="xs"
             variant={alreadyLiked ? "solid" : "outline"}
             onClick={() => {
-              setThumbsUp(article.likes + 1);
+              setThumbsUp(content.likes + 1);
             }}
           >
             {thumbsUp}
           </Button>
+        </HStack>
+        <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
+
+        <Flex paddingTop="4">
+          <Spacer />
+          <Link to={`/article/${article.id}`}>
+            <Text color="purple.400" fontSize="sm">
+              Leer articulo completo
+            </Text>
+          </Link>
+          <Text color="purple.400" fontSize="sm" paddingStart="1" paddingTop="1">
+            <VscArrowRight />
+          </Text>
         </Flex>
       </Box>
     </div>
