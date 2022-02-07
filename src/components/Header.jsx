@@ -42,7 +42,7 @@ function Header() {
             >
               <HStack spacing="0">
                 <Emoji label="emoji" symbol="💻" />
-                <Text>MyDevNotes</Text>
+                <Text>myDevNotes</Text>
               </HStack>
             </Heading>
           </RouterLink>

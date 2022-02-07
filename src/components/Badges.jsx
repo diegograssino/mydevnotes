@@ -5,7 +5,7 @@ function Badges({category}) {
   switch (category.toUpperCase()) {
     case "REACT":
       return (
-        <Badge color="cyan.400" marginBottom="2" paddingStart="0" variant="unstyled">
+        <Badge color="cyan.400" marginBottom="1" paddingStart="0" variant="unstyled">
           <Flex>
             <Text fontSize="md">
               <DiReact />

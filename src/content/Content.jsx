@@ -10,6 +10,8 @@ import COLORS from "../constants/colors";
 import Emoji from "../components/Emoji";
 import HrLine from "../components/HrLine";
 
+import MdContent from "./MdContent";
+
 function Content({content}) {
   const [thumbsUp, setThumbsUp] = useState(content.likes);
   const [alreadyLiked, setAlreadyLiked] = useState(false);
@@ -41,15 +43,17 @@ function Content({content}) {
         paddingY={[1, 2, 5, 7]}
         shadow="dark-lg"
       >
-        <Badges category={content.category} />
-        <Heading as="h3" fontWeight={700} paddingBottom="2" size="md">
+        {/* <Heading as="h3" fontWeight={700} paddingBottom="2" size="md">
           <Text>{content.title.toUpperCase()}</Text>
-        </Heading>
+        </Heading> */}
         <HStack paddingBottom={2} spacing="0">
-          <Text color="teal" fontSize="xs" fontWeight="bold">
+          <Box paddingTop="2">
+            <Badges category={content.category} marginTop="2" />
+          </Box>
+          <Text color="teal.400" fontSize="xs" fontWeight="bold">
             <VscWatch />
           </Text>
-          <Text color="teal" fontSize="xs" fontWeight="bold">
+          <Text color="teal.400" fontSize="xs" fontWeight="bold">
             {new Intl.DateTimeFormat("es-AR").format(
               new Date(content.date.seconds * 1000),
             )}
@@ -62,7 +66,7 @@ function Content({content}) {
           </Text>
           <Spacer />
           <Button
-            colorScheme="teal"
+            colorScheme="green"
             fontSize="sm"
             fontWeight="bold"
             paddingLeft="3"
@@ -78,9 +82,8 @@ function Content({content}) {
         </HStack>
 
         <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
-        <Text fontSize="sm" marginY="2">
-          {content.content}
-        </Text>
+        <Box />
+        <MdContent mdFile={content.id} />
         <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
         <Flex marginTop={2}>
           <Text color="purple.400" fontSize="sm" paddingEnd="1" paddingTop="1">
@@ -93,7 +96,7 @@ function Content({content}) {
           </Link>
           <Spacer />
           <Button
-            colorScheme="teal"
+            colorScheme="green"
             fontSize="sm"
             fontWeight="bold"
             paddingLeft="3"
@@ -111,5 +114,4 @@ function Content({content}) {
     </div>
   );
 }
-
 export default Content;
