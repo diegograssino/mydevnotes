@@ -6,6 +6,8 @@ const COLORS = {
   quaternary: "#FC5185",
   navbar: "rgba(255, 255, 255, 0.3)",
   gradientBackgroud: "#7900FF, #548CFF",
+  darkPrimary: "teal.400",
+  darkSecondary: "purple.400",
 };
 
 // Los otros colores #7900FF, #548CFF, #93FFD8,#CFFFDC

@@ -95,7 +95,7 @@ const MdContent = ({mdFile}) => {
   );
 
   const a = ({children, ...props}) => (
-    <Link color="teal.300" {...props}>
+    <Link color={COLORS.darkPrimary} {...props}>
       {children}
     </Link>
   );

@@ -9,6 +9,7 @@ import Badges from "../components/Badges";
 import COLORS from "../constants/colors";
 import Emoji from "../components/Emoji";
 import HrLine from "../components/HrLine";
+import LikeButton from "../components/LikeButton";
 
 function Article({article}) {
   const [thumbsUp, setThumbsUp] = useState(article.likes);
@@ -47,47 +48,48 @@ function Article({article}) {
             <Text>{article.title.toUpperCase()}</Text>
           </Link>
         </Heading>
-        <HStack paddingBottom={5} spacing="0">
-          <Text color="teal" fontSize="xs" fontWeight="bold">
+        <HStack paddingBottom={6} spacing="0">
+          <Text color={COLORS.darkPrimary} fontSize="xs" fontWeight="bold">
             <VscWatch />
           </Text>
-          <Text color="teal" fontSize="xs" fontWeight="bold" paddingRight="2">
+          <Text
+            color={COLORS.darkPrimary}
+            fontSize="xs"
+            fontWeight="bold"
+            paddingRight="2"
+          >
             {new Intl.DateTimeFormat("es-AR").format(
               new Date(article.date.seconds * 1000),
             )}
           </Text>
-          <Text color="purple.400" fontSize="xs" fontWeight="bold">
+          <Text color={COLORS.darkSecondary} fontSize="xs" fontWeight="bold">
             <VscPerson />
           </Text>
-          <Text color="purple.400" fontSize="xs" fontWeight="bold">
+          <Text color={COLORS.darkSecondary} fontSize="xs" fontWeight="bold">
             {article.author}
           </Text>
           <Spacer />
-          <Button
-            colorScheme="teal"
-            fontSize="sm"
-            fontWeight="bold"
-            paddingLeft="3"
-            rightIcon={<Emoji label="emoji" symbol="👍🏻" />}
-            size="xs"
-            variant={alreadyLiked ? "solid" : "outline"}
-            onClick={() => {
-              setThumbsUp(content.likes + 1);
-            }}
-          >
-            {thumbsUp}
-          </Button>
+          <LikeButton
+            alreadyLiked={alreadyLiked}
+            setThumbsUp={setThumbsUp}
+            thumbsUp={thumbsUp}
+          />
         </HStack>
         <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
 
         <Flex paddingTop="4">
           <Spacer />
           <Link to={`/article/${article.id}`}>
-            <Text color="purple.400" fontSize="sm">
+            <Text color={COLORS.darkSecondary} fontSize="sm">
               Leer articulo completo
             </Text>
           </Link>
-          <Text color="purple.400" fontSize="sm" paddingStart="1" paddingTop="1">
+          <Text
+            color={COLORS.darkSecondary}
+            fontSize="sm"
+            paddingStart="1"
+            paddingTop="1"
+          >
             <VscArrowRight />
           </Text>
         </Flex>

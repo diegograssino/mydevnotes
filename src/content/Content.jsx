@@ -9,6 +9,7 @@ import Badges from "../components/Badges";
 import COLORS from "../constants/colors";
 import Emoji from "../components/Emoji";
 import HrLine from "../components/HrLine";
+import LikeButton from "../components/LikeButton";
 
 import MdContent from "./MdContent";
 
@@ -43,42 +44,30 @@ function Content({content}) {
         paddingY={[2, 5, 5, 7]}
         shadow="dark-lg"
       >
-        {/* <Heading as="h3" fontWeight={700} paddingBottom="2" size="md">
-          <Text>{content.title.toUpperCase()}</Text>
-        </Heading> */}
         <Box paddingTop="2">
           <Badges category={content.category} marginTop="2" />
         </Box>
         <HStack paddingBottom={2} spacing="0">
-          <Text color="teal.400" fontSize="xs" fontWeight="bold">
+          <Text color={COLORS.darkPrimary} fontSize="xs" fontWeight="bold">
             <VscWatch />
           </Text>
-          <Text color="teal.400" fontSize="xs" fontWeight="bold">
+          <Text color={COLORS.darkPrimary} fontSize="xs" fontWeight="bold">
             {new Intl.DateTimeFormat("es-AR").format(
               new Date(content.date.seconds * 1000),
             )}
           </Text>
-          <Text color="purple.400" fontSize="xs" fontWeight="bold">
+          <Text color={COLORS.darkSecondary} fontSize="xs" fontWeight="bold">
             <VscPerson />
           </Text>
-          <Text color="purple.400" fontSize="xs" fontWeight="bold">
+          <Text color={COLORS.darkSecondary} fontSize="xs" fontWeight="bold">
             {content.author}
           </Text>
           <Spacer />
-          <Button
-            colorScheme="green"
-            fontSize="sm"
-            fontWeight="bold"
-            paddingLeft="3"
-            rightIcon={<Emoji label="emoji" symbol="👍🏻" />}
-            size="xs"
-            variant={alreadyLiked ? "solid" : "outline"}
-            onClick={() => {
-              setThumbsUp(content.likes + 1);
-            }}
-          >
-            {thumbsUp}
-          </Button>
+          <LikeButton
+            alreadyLiked={alreadyLiked}
+            setThumbsUp={setThumbsUp}
+            thumbsUp={thumbsUp}
+          />
         </HStack>
 
         <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
@@ -86,29 +75,20 @@ function Content({content}) {
         <MdContent mdFile={content.id} />
         <HrLine theBorderColor={COLORS.darkBorderArticleContent} />
         <Flex marginTop={2}>
-          <Text color="purple.400" fontSize="sm" paddingEnd="1" paddingTop="1">
+          <Text color={COLORS.darkSecondary} fontSize="sm" paddingEnd="1" paddingTop="1">
             <VscArrowLeft />
           </Text>
           <Link to="/">
-            <Text color="purple.400" fontSize="sm">
+            <Text color={COLORS.darkSecondary} fontSize="sm">
               Volver al home
             </Text>
           </Link>
           <Spacer />
-          <Button
-            colorScheme="green"
-            fontSize="sm"
-            fontWeight="bold"
-            paddingLeft="3"
-            rightIcon={<Emoji label="emoji" symbol="👍🏻" />}
-            size="xs"
-            variant={alreadyLiked ? "solid" : "outline"}
-            onClick={() => {
-              setThumbsUp(article.likes + 1);
-            }}
-          >
-            {thumbsUp}
-          </Button>
+          <LikeButton
+            alreadyLiked={alreadyLiked}
+            setThumbsUp={setThumbsUp}
+            thumbsUp={thumbsUp}
+          />
         </Flex>
       </Box>
     </div>
