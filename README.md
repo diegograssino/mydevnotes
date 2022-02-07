@@ -1,4 +1,7 @@
-# myDevNotes - Blog sobre desarrollo web en español
+# MYDEVNOTES - BLOG SOBRE DESARROLLO WEB EN ESPAÑOL
+
+Deploy:
+[https://mydevnotes.vercel.app/](https://mydevnotes.vercel.app/)
 
 myDevNotes surge, en primer lugar, por tener ganas de generar siempre nuevos proyectos y el disfrutar el proceso de desarrollo e implementación. Por supuesto que tenia pensado un uso para la herramienta que es dar contenido extra a todos los alumnos que tengo a cargo en distintos cursos de desarrollo en los que colaboro y, por supuesto, a toda persona que sienta de utilidad el material. El blog tiene ciertos lineamientos, los cuales son:
 
