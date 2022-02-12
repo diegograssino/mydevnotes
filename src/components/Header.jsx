@@ -49,8 +49,9 @@ function Header() {
           <Spacer />
 
           <HStack spacing="3">
-            <CategoryMenu />
-
+			  <Box paddingEnd="1
+			  ">
+            <CategoryMenu /></Box>
             <Link to="/info">
               <Box color={COLORS.darkText}>
                 <VscInfo />

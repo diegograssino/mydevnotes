@@ -1,4 +1,4 @@
-import {Box, Code, Heading, Link, Center, Image} from "@chakra-ui/react";
+import {Box, Code, Heading, Link, Center, Image, Flex} from "@chakra-ui/react";
 import {useEffect, useState} from "react";
 import Markdown from "markdown-to-jsx";
 
@@ -53,8 +53,10 @@ const MdContent = ({mdFile}) => {
   );
 
   const code = ({children, ...props}) => (
-    <Box paddingTop="5">
+    // <Flex paddingTop="5" wrap="nowrap">
       <Code
+	  overflow="auto"
+	  marginTop="5"
         backgroundColor={COLORS.darkBackground}
         borderRadius="5px"
         color={COLORS.darkText}
@@ -62,9 +64,10 @@ const MdContent = ({mdFile}) => {
         width="100%"
         {...props}
       >
+		  
         {children}
       </Code>
-    </Box>
+    // </Flex>
   );
 
   const span = ({children, ...props}) => (
@@ -100,7 +103,7 @@ const MdContent = ({mdFile}) => {
     </Link>
   );
 
-  const img = ({children, ...props}) => <Image {...props} />;
+  const img = ({children, ...props}) => <Center><Image maxWidth="66%" {...props} /></Center>;
 
   return (
     <Box paddingBottom="7">
