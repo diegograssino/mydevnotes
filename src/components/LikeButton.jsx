@@ -9,7 +9,7 @@ const LikeButton = ({setThumbsUp, alreadyLiked, thumbsUp}) => {
       fontSize="sm"
       fontWeight="bold"
       paddingLeft="3"
-      rightIcon={<Emoji label="emoji" symbol="👍🏻" />}
+      rightIcon={<Emoji label="emoji" symbol="👏" />}
       size="xs"
       variant={alreadyLiked ? "solid" : "outline"}
       onClick={() => {

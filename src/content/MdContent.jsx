@@ -54,19 +54,18 @@ const MdContent = ({mdFile}) => {
 
   const code = ({children, ...props}) => (
     // <Flex paddingTop="5" wrap="nowrap">
-      <Code
-	  overflow="auto"
-	  marginTop="5"
-        backgroundColor={COLORS.darkBackground}
-        borderRadius="5px"
-        color={COLORS.darkText}
-        padding="2"
-        width="100%"
-        {...props}
-      >
-		  
-        {children}
-      </Code>
+    <Code
+      backgroundColor={COLORS.darkBackground}
+      borderRadius="5px"
+      color={COLORS.darkText}
+      marginTop="5"
+      overflow="auto"
+      padding="2"
+      width="100%"
+      {...props}
+    >
+      {children}
+    </Code>
     // </Flex>
   );
 
@@ -103,7 +102,13 @@ const MdContent = ({mdFile}) => {
     </Link>
   );
 
-  const img = ({children, ...props}) => <Center><Image maxWidth="66%" {...props} /></Center>;
+  const img = ({children, ...props}) => <Image maxWidth="66%" {...props} />;
+
+  const ul = ({children, ...props}) => (
+    <Box paddingTop="5" {...props}>
+      {children}
+    </Box>
+  );
 
   return (
     <Box paddingBottom="7">
@@ -139,6 +144,9 @@ const MdContent = ({mdFile}) => {
             },
             img: {
               component: img,
+            },
+            ul: {
+              component: ul,
             },
           },
         }}
