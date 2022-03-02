@@ -61,11 +61,11 @@ Donde my-app es el nombre que le daremos a nuestro proyecto. Un detalle muy impo
 
 Ahora ya tenemos nuestro proyecto creado, pero no lo tenemos subido a Github , desde ya que primero debemos crear un cuenta en dicho servicio, una vez hecho esto, desde su misma página vamos a crear un repositorio haciendo click en el botón de New o Nuevo:
 
-![](https://dl.dropbox.com/s/hrfmxftvgih7vxh/newrepo1.png)
+![](https://i.imgur.com/ozsZUCa.png)
 
 Ingresaremos el nombre del proyecto y, sin modificar ninguna de las opciones por defecto, daremos click en Create repository/ Crear repositorio.
 
-![](https://dl.dropbox.com/s/u0g4ezetwuihgm7/newrepo2.png)
+![](https://i.imgur.com/kXd9mZj.png)
 
 ¡Felicidades! Acabas de crear tu primero repo pero esta vacío, Github nos estará mostrando algunas opciones para subirlo, tomaremos la segunda opción ya que tenemos un proyecto existente ya creado, esta nos sugiere algunos comando pero primero lo primero, nos dirigiremos a la consola y nos aseguramos de estar dentro de la carpeta del proyecto, si no lo estamos, ingresaremos de la siguiente manera:
 
@@ -95,11 +95,11 @@ git push -u origin main
 
 Es importante evitar tildes y ñ y que comentemos en imperativo (Agregué, modifiqué o eliminé, por ejemplo), ese comentario se mostrará luego en el historial de versiones por lo que podré saber que se hizo. Pero, ¿Cómo hago para mostrar la "foto" de mi proyecto en un instante determinado? Recordemos que git es un control de versiones, por lo que puedo revisar cada actualización o commit individualmente y también puedo compartir ese momento exacto del código sin problemas. Entonces, ¿Como obtengo el link al commit? Para eso, en la versión web de nuestro repositorio en Github, debemos ir al historial de commits, luego haremos click en el commit que quiero compartir, la url que figura en la barra del navegador es el link al commit, y el identificador ese número largo que esta al final y que también figura más abajo. Esa url, es el link al commit:
 
-![](https://dl.dropbox.com/s/un94716k6jlkejt/commit1.png)
+![](https://i.imgur.com/nZEzCuB.png)
 
-![](https://dl.dropbox.com/s/yxulxshzmqie3jz/commit2.png)
+![](https://i.imgur.com/LSoTxuK.png)
 
-![](https://dl.dropbox.com/s/d171ng0knj9qj8v/commit3.png)
+![](https://i.imgur.com/O04FK7w.png)
 
 La url tendrá un formato similar a este:
 
