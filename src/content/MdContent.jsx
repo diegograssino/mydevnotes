@@ -19,7 +19,7 @@ const MdContent = ({mdFile}) => {
       .catch((err) => console.log(err));
   });
   const h1 = ({children, ...props}) => (
-    <Box paddingTop="7">
+    <Box paddingBottom="3" paddingTop="7">
       <Heading as="h1" paddingBottom="2" {...props} size="2xl">
         {children}
       </Heading>
@@ -28,7 +28,7 @@ const MdContent = ({mdFile}) => {
   );
 
   const h2 = ({children, ...props}) => (
-    <Box paddingTop="7">
+    <Box paddingBottom="3" paddingTop="7">
       <Heading as="h2" paddingBottom="2" {...props} size="xl">
         {children}
       </Heading>
@@ -37,7 +37,7 @@ const MdContent = ({mdFile}) => {
   );
 
   const h3 = ({children, ...props}) => (
-    <Box paddingTop="7">
+    <Box paddingBottom="3" paddingTop="7">
       <Heading as="h3" {...props} size="md">
         {children}
       </Heading>
@@ -45,7 +45,7 @@ const MdContent = ({mdFile}) => {
   );
 
   const h4 = ({children, ...props}) => (
-    <Box paddingTop="7">
+    <Box paddingBottom="3" paddingTop="7">
       <Heading as="h4" {...props} size="md">
         {children}
       </Heading>
@@ -53,24 +53,23 @@ const MdContent = ({mdFile}) => {
   );
 
   const code = ({children, ...props}) => (
-    // <Flex paddingTop="5" wrap="nowrap">
     <Code
       backgroundColor={COLORS.darkBackground}
       borderRadius="5px"
       color={COLORS.darkText}
+      marginBottom="3"
       marginTop="5"
       overflow="auto"
-      padding="2"
+      padding="5"
       width="100%"
       {...props}
     >
       {children}
     </Code>
-    // </Flex>
   );
 
   const span = ({children, ...props}) => (
-    <Box paddingTop="5">
+    <Box paddingBottom="3" paddingTop="3">
       <Code
         backgroundColor={COLORS.darkBackground}
         borderRadius="5px"
@@ -85,13 +84,13 @@ const MdContent = ({mdFile}) => {
   );
 
   const div = ({children, ...props}) => (
-    <Box paddingTop="5" {...props}>
+    <Box paddingBottom="3" paddingTop="3" {...props}>
       {children}
     </Box>
   );
 
   const p = ({children, ...props}) => (
-    <Box paddingTop="5" {...props}>
+    <Box paddingBottom="3" paddingTop="3" {...props}>
       {children}
     </Box>
   );
@@ -105,8 +104,14 @@ const MdContent = ({mdFile}) => {
   const img = ({children, ...props}) => <Image maxWidth="66%" {...props} />;
 
   const ul = ({children, ...props}) => (
-    <Box paddingTop="5" {...props}>
+    <Box paddingBottom="5" paddingTop="1" {...props}>
       {children}
+    </Box>
+  );
+
+  const li = ({children, ...props}) => (
+    <Box paddingTop="4" {...props}>
+      <li>{children}</li>
     </Box>
   );
 
@@ -147,6 +152,9 @@ const MdContent = ({mdFile}) => {
             },
             ul: {
               component: ul,
+            },
+            li: {
+              component: li,
             },
           },
         }}

@@ -20,9 +20,16 @@ Tanto [create-react-app](https://create-react-app.dev/) como [vite](https://vite
 ![vite template](https://i.imgur.com/DnXDW12.png)
 *vite template*
 
+¡Hermosa bienvenida nos dan ambas tool a nuestra nueva app de React! Pero no va a durar mucho tiempo, es momento de ponernos manos a la obra y comenzar a trabajar, y para eso, tendremos que quitar todo lo que nos esta mostrando, quitaremos lo siguiente:
 
-~~~
-git --version
-~~~
+* Dentro de index/ main: Solo vamos a dejar la importación de la libreria de React y el renderizado del componente App, todo lo que refiera a estilos CSS y librerias de test sera removido.
+* Dentro de App: Tambien quitaremos todas las referencias a archivos CSS como tambien todo lo que este dentro del return.
+* Basicamente, solo nos tiene que quedar index/ main, App y los archivos de imagenes referidos al favicon, el resto, out.
 
-Si retorna la versión de git que estamos utilizando, entonces ya lo tenemos instalado y podemos continuar con el siguiente paso pero no sin antes saber que, si utilizo Windows, a partir de ahora va a ser mas cómodo utilizar git-bash, la consola que viene incluida con git ya que asi evitaremos errores. Si no lo tenemos instalado, nos dirigiremos a la página oficial de [git](https://git-scm.com/downloads) para descargarlo e instalarlo siguiendo los pasos que se indican para cada sistema operativo.
+Básicamente va a quedar así nuestro proyecto:
+
+*create-react-app limpio*
+
+*vite limpio*
+
+#### ¡ARTICULO EN PROCESO! Proximamente finalizado ...
